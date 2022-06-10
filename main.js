@@ -46,7 +46,6 @@ currentBtn.onclick = function() {
             let lat = position.coords.latitude;
             let lon = position.coords.longitude;
             //get city name from lat and lon
-            console.log(lat, lon);
             fetch(
                     "https://api.openweathermap.org/data/2.5/weather?lat=" +
                     lat +
@@ -57,7 +56,6 @@ currentBtn.onclick = function() {
                 )
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data.weather[0].description);
                     txt.innerHTML = data.name.toUpperCase();
                     numMax.innerHTML =
                         "Max: " +
